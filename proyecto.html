@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Juego Adivina (v4)</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="functions.js">
+    </script>
+</head>
+
+<body id="fondo" onload="modal();">
+    <div class="container">
+        <div class="content">
+            <div class=" title">
+                <div class="logo">
+                    <span>A </span>
+                    <span>D </span>
+                    <span>I </span>
+                    <span>V </span>
+                    <span>I </span>
+                    <span>N </span>
+                    <span>A </span>
+                    <span class="blink">|</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <div id="jefe">
+        <div id="respuestas" class="respuestas">
+            <div>
+                <p align=center> Respuestas </p>
+            </div>
+        </div>
+        <div class="game-boy-wrapper">
+            <div class="game-boy">
+                <div class="game-boy-screen center">
+                    <div id="game">
+                        <div id="txt">Adivina un número del 1 al 1000</div>
+                        Número:
+                        <input id="num" class="fields" type="number" maxlength="4" value="" />
+                        <br/>
+                        <input type="button" onclick="procesa(num.value);" value="Aceptar" />
+                        <img id="imagen" height="124" width="250" src="" class="center">
+                    </div>
+                </div>
+                <div class="controls-wrapper">
+                    <div class="cross"> </div>
+                    <div class="circle-buttons"> </div>
+                    <div class="menu-buttons"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Audio -->
+    <audio src="audio/gameover.mp3" id="gameover"></audio>
+    <audio src="audio/completo.mp3" id="completo"></audio>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Opciones</h2>
+            </div>
+            <div class="modal-body">
+                <p>Elige el numero entre los cuales adivinar</p>
+                <input type="number" id="limite" min=0>
+                <p>Elige el numero de intentos</p>
+                <input type="number" id="max" min=0>
+            </div>
+            <div class="modal-footer">
+                <input type="button" onclick="validar();" value="Aceptar" />
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+@font-face {
+	font-family: 'Conv_PressStart2P';
+	src: url('fonts/PressStart2P.eot');
+	src: local('☺'), url('fonts/PressStart2P.woff') format('woff'), url('fonts/PressStart2P.ttf') format('truetype'), url('fonts/PressStart2P.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+    
+/* The Modal (background) */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+        /* Modal Content */
+        
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        /* Add Animation */
+        
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        /* The Close Button */
+        
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #66a3c6;
+            color: white;
+        }
+        
+        .modal-body {
+            padding: 2px 16px;
+        }
+        
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #66a3c6;
+            color: white;
+        }
+
+.container {
+                text-align: center;
+            }
+.center {
+    text-align: center;
+}
+
+#jefe {
+    width: 100%;
+    justify-content: center;
+}
+
+.respuestas {
+    width: 50%;
+    position: fixed;
+}
+
+.content {
+    text-align: center;
+    display: inline-block;
+}
+
+.title {
+    font-size: 450%;
+    text-align: center;
+}
+    
+*, *:before, *:after {
+  box-sizing: border-box; /*pa dentro*/
+}
+
+.game-boy-wrapper {
+    display: flex;
+    flex-direction: row; /* */
+    flex-wrap: wrap;
+    width: 50%;
+    float: right;
+}
+
+.game-boy {
+  margin-top:20px;
+  background-color: #fffce9;  
+  height: 700px;
+  width: 400px;
+  border-radius: 0 0 30px 0;
+  position:relative;
+ }
+.game-boy-screen {
+  margin: 40px auto;
+  display:block;
+  background-color: #bdde62; 
+  height: 310px;
+  width: 330px;
+  border: solid 30px #524a50;
+   
+ }
+
+.controls-wrapper {
+   position:relative;
+   width: 100%;
+   height: 240px;
+}
+.cross {
+   top:40px;
+   left:40px;
+   position:absolute;
+   width: 78px;
+   height: 26px;
+   background-color:#524a50;
+ }
+.cross:before {
+   content:'';
+   top:-26px;
+   left: 26px;
+   position:absolute;
+   width: 26px;
+   height: 78px;
+   background-color:#524a50;
+ }
+
+.circle-buttons {
+   top:20px;
+   right:40px;
+   position:absolute;
+   width: 50px;
+   height: 50px;
+   border-radius:50%;
+   background-color:#ea7570;
+   box-shadow: #ea7570 -70px 20px 0px 0px;
+ }
+.menu-buttons {
+   left: calc(75% - 120px);
+   bottom:30px;
+   position:absolute;
+   width: 26px;
+   height: 10px;
+   background-color:#524a50;
+   box-shadow: #524a50 30px 0px 0px 0px;
+ }
+    
+body {
+    background-color: #66a3c6;
+    font-family: 'Conv_PressStart2P';
+}
+
+
+.logo > * {
+  text-align: center;
+  font-size: 100% !important;
+  font-weight: 600;
+  display: inline-block;
+  animation-name: appear;
+  animation-duration: .01s;
+  animation-fill-mode: both;
+  text-align: absolute;
+}
+.logo > *:nth-of-type(1) {
+animation-delay: 1s
+font-size: 80% ;
+}
+.logo > *:nth-of-type(2) {
+animation-delay: 1.4s
+}
+.logo > *:nth-of-type(3) {
+animation-delay: 1.7s
+}
+.logo > *:nth-of-type(4) {
+animation-delay: 2s
+}
+.logo > *:nth-of-type(5) {
+animation-delay: 2.4s
+}
+.logo > *:nth-of-type(6) {
+animation-delay: 2.7s
+}
+.logo > *:nth-of-type(7) {
+animation-delay: 3s
+}
+
+@keyframes appear {
+from {
+  font-size: 0em;
+}
+to {
+  font-size: 1em;
+}
+}
+.blink {
+    font-size: 60px;
+    font-weight: 400;
+    display: inline-block;
+    visibility: visible;
+    width: auto;
+    animation-name: flash;
+    animation-duration: .8s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@keyframes flash {
+0% {
+  opacity: 0;
+}
+25% {
+  opacity: 1;
+}
+75% {
+  opacity: 1;
+}
+100% {
+  opacity: 0;
+}
+
+.fields {
+    background-color: #bdde62;
+    border: 2px solid #bdde62;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #66a3c6; /* Fallback color */
+    background-color: #66a3c6; /* Black w/ opacity */
+}
+
+
+

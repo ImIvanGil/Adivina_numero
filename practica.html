@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Juego Adivina (v4)</title>
+<style>
+    
+    body {
+    background-color: #66a3c6;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box; /*pa dentro*/
+}
+
+
+
+.game-boy {
+  margin-top:20px;
+  background-color: #fffce9;  
+  height: 350px;
+  width: 200px;
+  border-radius: 0 0 20px 0;
+  position:relative;
+ }
+.game-boy-screen {
+  margin: 20px auto;
+  display:block;
+  background-color: #bdde62; 
+  height: 155px;
+  width: 165px;
+  border: solid 15px #524a50;
+   
+ }
+
+.controls-wrapper {
+   position:relative;
+   width: 100%;
+   height: 120px;
+}
+.cross {
+   top:20px;
+   left:20px;
+   position:absolute;
+   width: 39px;
+   height: 13px;
+   background-color:#524a50;
+ }
+.cross:before {
+   content:'';
+   top:-13px;
+   left: 13px;
+   position:absolute;
+   width: 13px;
+   height: 39px;
+   background-color:#524a50;
+ }
+
+.circle-buttons {
+   top:10px;
+   right:20px;
+   position:absolute;
+   width: 25px;
+   height: 25px;
+   border-radius:50%;
+   background-color:#ea7570;
+   box-shadow: #ea7570 -35px 10px 0px 0px;
+ }
+.menu-buttons {
+   left: calc(50% - 28px);
+   bottom:10px;
+   position:absolute;
+   width: 25px;
+   height: 7px;
+   background-color:#524a50;
+   box-shadow: #524a50 30px 00px 0px 0px;
+    padding-bottom: 1000px;
+ }
+    
+    body {
+        width:320px; font:bold large Helvetica;
+        background-color: grey; color: yellow;
+    }
+
+    .bar {
+            color:blue;
+            line-height: 44px;
+            font-size: 20px;
+            text-align: center;
+            margin: 0;
+            text-shadow:0 1px 0 gray<;
+            background-color: #C9C9C9;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#C9C9C9), to(#848484),color-stop(0.6,#a1a1a1));
+            border-bottom: 1px solid #555;
+        }
+</style>
+
+<script>
+    // Variables Globales para Nodos DOM
+ var cuenta, valor, oculto, fondo, display, imagen;
+ var max_intento = 10; // Cte configuracion
+
+function init() {
+   cuenta = 1;
+   oculto = Math.floor(Math.random()*1001);
+   valor = document.getElementById("num");
+   fondo = document.getElementById("fondo");
+   display = document.getElementById("txt");
+   imagen = document.getElementById("imagen");
+   valor.focus();
+   valor.value = ""; // RESET
+}
+
+function print(str) {
+    nodo = document.createTextNode(str);
+    display.replaceChild(nodo,display.firstChild);
+}
+
+function procesa( num ) {
+    if ( cuenta <= max_intento )
+    {
+        if ( num < oculto ) {
+            print(cuenta+') Anota núm. MAYOR ');
+            fondo.style.backgroundColor="#004400";
+            imagen.src="up.jpg";
+        }
+        else if ( num > oculto ) {
+            print(cuenta+') Anota núm. menor ');
+            fondo.style.backgroundColor="#440000";
+            imagen.src="down.jpg";
+        }
+        else {
+            print('GANASTE!!');
+            fondo.style.backgroundColor="#000044";
+            imagen.src="ganaste.jpg";
+            init(); // REINICIAR
+        }
+        cuenta++;
+        valor.value = ""; // RESET
+        valor.focus();
+    }
+    else {
+        print (cuenta+') P E R D I S T E');
+        alert('El Juego Inicia otra vez');
+        imagen.src="perdiste.jpg";
+        init();
+    }
+}
+
+</script>
+</head>
+<body id="fondo" onload="init();">
+    <div class="bar">
+            Adivina Número
+    </div>
+    <br/>
+    <div id="txt">Adivina un número del 1 al 1000</div>
+    <form>
+         Número: <input id="num" type="number" maxlength="4" value="" />
+        <br/>
+        <input type="button" onclick="procesa(num.value);" value="Aceptar" />
+    </form>
+    <img id="imagen" src="adivina.png" />
+</body>
+</html>
